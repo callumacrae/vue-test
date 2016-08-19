@@ -1,4 +1,4 @@
-import mount from 'src/index.js';
+import { mount } from 'src/index.js';
 import Input from '../fixtures/Input.vue';
 
 describe('.value()', function () {
