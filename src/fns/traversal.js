@@ -1,5 +1,11 @@
 import MountedComponent from '../MountedComponent';
 
+/**
+ * Find all elements within the mounted element(s) matching a given selector.
+ *
+ * @param {string} selector The selector to use.
+ * @returns {MountedComponent} A new MountedComponent.
+ */
 exports.find = function componentFind(selector) {
   const found = [];
 

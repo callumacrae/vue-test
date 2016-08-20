@@ -9,6 +9,14 @@ Object.defineProperty(MountedComponent.prototype, 'length', {
   enumerable: true
 });
 
+/**
+ * Initialise a new component with a vm and elements. Used internally by the
+ * `mount()` function.
+ *
+ * @param {Object} TestComponent A Vue component to mount.
+ * @param {Object} [props] An optional objects containing properties to pass.
+ * @private
+ */
 MountedComponent.prototype._init = function initMountedComponent(TestComponent, props = {}) {
   // If propsString makes you say wtf, please +1 the following issue:
   // https://github.com/vuejs/vue/issues/2114
