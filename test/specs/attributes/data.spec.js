@@ -1,5 +1,5 @@
 import { mount } from 'src/index.js';
-import Tree from '../fixtures/Tree.vue';
+import Tree from '../../fixtures/Tree.vue';
 
 describe('.data()', function () {
   it('should return data attributes of element', function () {

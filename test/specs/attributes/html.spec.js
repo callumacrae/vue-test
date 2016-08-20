@@ -1,5 +1,5 @@
 import { mount } from 'src/index.js';
-import Title from '../fixtures/Title.vue';
+import Title from '../../fixtures/Title.vue';
 
 describe('.html()', function () {
   it('should return HTML of element', function () {

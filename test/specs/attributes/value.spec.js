@@ -1,6 +1,6 @@
 import { mount } from 'src/index.js';
-import Input from '../fixtures/Input.vue';
-import Title from '../fixtures/Title.vue';
+import Input from '../../fixtures/Input.vue';
+import Title from '../../fixtures/Title.vue';
 
 describe('.value()', function () {
   it('should return value of input', function () {

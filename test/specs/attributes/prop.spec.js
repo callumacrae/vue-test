@@ -1,5 +1,5 @@
 import { mount } from 'src/index.js';
-import Tree from '../fixtures/Tree.vue';
+import Tree from '../../fixtures/Tree.vue';
 
 describe('.prop()', function () {
   it('should return true when property found', function () {

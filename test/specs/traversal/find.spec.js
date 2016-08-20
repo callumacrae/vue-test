@@ -1,5 +1,5 @@
 import { mount } from 'src/index.js';
-import Tree from '../fixtures/Tree.vue';
+import Tree from '../../fixtures/Tree.vue';
 
 describe('.find()', function () {
   it('should return single elements', function () {
