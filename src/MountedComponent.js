@@ -34,5 +34,6 @@ MountedComponent.prototype._init = function initMountedComponent(TestComponent, 
 };
 
 Object.assign(MountedComponent.prototype, require('./fns/attributes'));
+Object.assign(MountedComponent.prototype, require('./fns/iteration'));
 Object.assign(MountedComponent.prototype, require('./fns/testing'));
 Object.assign(MountedComponent.prototype, require('./fns/traversal'));

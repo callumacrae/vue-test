@@ -36,10 +36,10 @@ expect(mountedComponent.find('h1').text()).to.equal('Hello world!');
 
 ### Iteration
 
-- [ ] `.each()`
-- [ ] `.map()`
-- [ ] `.some()`
-- [ ] `.every()`
+- [x] `.each()`
+- [x] `.map()`
+- [x] `.some()`
+- [x] `.every()`
 
 ### Subsets
 
