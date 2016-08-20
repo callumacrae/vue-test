@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" data-foo="bar">
     <h1>Title</h1>
     <p>This app has a bit of structure!</p>
     <p>Yay</p>
@@ -10,6 +10,9 @@
         <li>List 3 with <a href="#">link</a></li>
       </ul>
     </div>
+
+    <button class="disabled" disabled>Disabled button</button>
+    <button class="not-disabled">Not disabled button</button>
   </div>
 </template>
 

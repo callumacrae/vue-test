@@ -56,6 +56,18 @@ MountedComponent.prototype.value = function componentValue() {
   return this._el[0].value;
 };
 
+MountedComponent.prototype.data = function componentDataAttr(attrName) {
+  return this._el[0].dataset[attrName];
+};
+
+MountedComponent.prototype.attr = function componentAttr(attrName) {
+  return this._el[0].getAttribute(attrName);
+};
+
+MountedComponent.prototype.prop = function componentProp(propName) {
+  return this._el[0][propName];
+};
+
 MountedComponent.prototype.hasClass = function componentHasClass(className) {
   return Array.from(this._el).some((el) => el.classList.contains(className));
 };

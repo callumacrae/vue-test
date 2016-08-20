@@ -30,9 +30,9 @@ expect(mountedComponent.find('h1').text()).to.equal('Hello world!');
 - [x] `.html()`
 - [x] `.text()`
 - [x] `.value()`
-- [ ] `.data()`
-- [ ] `.attr()`
-- [ ] `.prop()`
+- [x] `.data()`
+- [x] `.attr()`
+- [x] `.prop()`
 
 ### Iteration
 
@@ -40,6 +40,12 @@ expect(mountedComponent.find('h1').text()).to.equal('Hello world!');
 - [ ] `.map()`
 - [ ] `.some()`
 - [ ] `.every()`
+
+### Subsets
+
+- [ ] `.get()`
+- [ ] `.eq()`
+- [ ] `.filter()`
 
 ### Testing
 

@@ -1,9 +1,12 @@
 <template>
-  <input type="text" value="{{ value || 'default value' }}">
+  <input type="text" value="{{ value }}">
 </template>
 
 <script>
   export default {
-    props: ['value']
+    props: [{
+      name: 'value',
+      default: 'default value'
+    }]
   };
 </script>
