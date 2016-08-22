@@ -1,5 +1,3 @@
-import MountedComponent from '../MountedComponent';
-
 /**
  * Get element or (if no argument) array of elements.
  *
@@ -25,11 +23,7 @@ exports.eq = function getElementAsMountedComponent(n) {
     return null;
   }
 
-  const elMount = new MountedComponent();
-  elMount._vm = this._vm;
-  elMount._el = [this._el[n]];
-
-  return elMount;
+  return this._newFromThis(this._el[n]);
 };
 
 /**
@@ -40,16 +34,10 @@ exports.eq = function getElementAsMountedComponent(n) {
  */
 exports.filter = function filterElements(cb) {
   const subset = Array.from(this._el).filter((el, i) => {
-    const elMount = new MountedComponent();
-    elMount._vm = this._vm;
-    elMount._el = [el];
+    const elMount = this._newFromThis(el);
 
     return cb.call(elMount, i, elMount);
   });
 
-  const mountedSubset = new MountedComponent();
-  mountedSubset._vm = this._vm;
-  mountedSubset._el = subset;
-
-  return mountedSubset;
+  return this._newFromThis(subset);
 };

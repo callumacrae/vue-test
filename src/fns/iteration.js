@@ -1,5 +1,3 @@
-import MountedComponent from '../MountedComponent';
-
 /**
  * Equivalent to array.forEach().
  *
@@ -8,10 +6,7 @@ import MountedComponent from '../MountedComponent';
  */
 exports.each = function componentEach(cb) {
   Array.from(this._el).forEach((el, i) => {
-    const elMount = new MountedComponent();
-    elMount._vm = this._vm;
-    elMount._el = [el];
-
+    const elMount = this._newFromThis(el);
     cb.call(elMount, i, elMount);
   });
 
@@ -26,10 +21,7 @@ exports.each = function componentEach(cb) {
  */
 exports.map = function componentMap(cb) {
   return Array.from(this._el).map((el, i) => {
-    const elMount = new MountedComponent();
-    elMount._vm = this._vm;
-    elMount._el = [el];
-
+    const elMount = this._newFromThis(el);
     return cb.call(elMount, i, elMount);
   });
 };
@@ -42,10 +34,7 @@ exports.map = function componentMap(cb) {
  */
 exports.some = function componentSome(cb) {
   return Array.from(this._el).some((el, i) => {
-    const elMount = new MountedComponent();
-    elMount._vm = this._vm;
-    elMount._el = [el];
-
+    const elMount = this._newFromThis(el);
     return cb.call(elMount, i, elMount);
   });
 };
@@ -58,10 +47,7 @@ exports.some = function componentSome(cb) {
  */
 exports.every = function componentEvery(cb) {
   return Array.from(this._el).every((el, i) => {
-    const elMount = new MountedComponent();
-    elMount._vm = this._vm;
-    elMount._el = [el];
-
+    const elMount = this._newFromThis(el);
     return cb.call(elMount, i, elMount);
   });
 };

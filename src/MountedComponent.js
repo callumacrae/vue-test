@@ -33,6 +33,21 @@ MountedComponent.prototype._init = function initMountedComponent(TestComponent, 
   this._el = this._vm.$el.children;
 };
 
+/**
+ * Generate a new MountedComponent in the same VM, but with different elements.
+ *
+ * @param {Array|HTMLElement} el HTML element (or array of)
+ * @returns {MountedComponent} New MountedComponent.
+ * @private
+ */
+MountedComponent.prototype._newFromThis = function newFromThis(el) {
+  const elMount = new MountedComponent();
+  elMount._vm = this._vm;
+  elMount._el = Array.isArray(el) ? el : [el];
+
+  return elMount;
+};
+
 Object.assign(MountedComponent.prototype, require('./fns/attributes'));
 Object.assign(MountedComponent.prototype, require('./fns/iteration'));
 Object.assign(MountedComponent.prototype, require('./fns/subsets'));
