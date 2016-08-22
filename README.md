@@ -43,9 +43,9 @@ expect(mountedComponent.find('h1').text()).to.equal('Hello world!');
 
 ### Subsets
 
-- [ ] `.get()`
-- [ ] `.eq()`
-- [ ] `.filter()`
+- [x] `.get()`
+- [x] `.eq()`
+- [x] `.filter()`
 
 ### Testing
 
