@@ -1,4 +1,4 @@
-import MountedComponent from '../MountedComponent';
+import '../vendor/matches-polyfill';
 
 /**
  * Find all elements within the mounted element(s) matching a given selector.
@@ -17,9 +17,28 @@ exports.find = function componentFind(selector) {
     return null;
   }
 
-  const newMount = new MountedComponent();
-  newMount._vm = this._vm;
-  newMount._el = found;
+  return this._newFromThis(found);
+};
 
-  return newMount;
+/**
+ * Find all children of mounted element(s), optionally matching a given
+ * selector.
+ *
+ * @param {string} [selector] The selector to filter by.
+ * @returns {*}
+ */
+exports.children = function componentChildren(selector) {
+  let children = [];
+
+  this._el.forEach((el) => children.push(...el.children));
+
+  if (selector) {
+    children = children.filter((child) => child.matches(selector));
+  }
+
+  if (!children.length) {
+    return null;
+  }
+
+  return this._newFromThis(children);
 };

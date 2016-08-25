@@ -16,6 +16,7 @@ module.exports = {
     'comma-dangle': 0,
     'no-underscore-dangle': 0,
     'prefer-arrow-callback': 0,
+    'no-param-reassign': 0,
     'no-debugger': 0,
     'vars-on-top': 0
   }

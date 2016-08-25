@@ -7,8 +7,13 @@
       <ul>
         <li>List 1</li>
         <li class="list-item">List 2</li>
-        <li>List 3 with <a href="#">link</a></li>
+        <li class="b">List 3 with <a href="#">link</a></li>
       </ul>
+    </div>
+
+    <div class="second-child-div">
+      <span class="a">a</span>
+      <span class="b">b</span>
     </div>
 
     <button class="disabled" disabled>Disabled button</button>

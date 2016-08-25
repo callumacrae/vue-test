@@ -22,7 +22,7 @@ expect(mountedComponent.find('h1').text()).to.equal('Hello world!');
 ### Traversal
 
 - [x] `.find()`
-- [ ] `.children()`
+- [x] `.children()`
 - [ ] `.parent()`
 
 ### Attributes
