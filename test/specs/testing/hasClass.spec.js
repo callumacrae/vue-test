@@ -1,4 +1,4 @@
-import { mount } from 'src/index.js';
+import { mount } from '../../../src/index.js';
 import Tree from '../../fixtures/Tree.vue';
 
 describe('.hasClass()', function () {
