@@ -5,6 +5,7 @@
   "author": "Callum Macrae <callum@macr.ae>",
   "scripts": {
     "build": "babel -d dist src/",
+    "prepublish": "npm run dev",
     "test": "karma start test/karma.conf.js --single-run"
   },
   "license": "MIT",
