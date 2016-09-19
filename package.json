@@ -1,6 +1,6 @@
 {
   "name": "vue-test",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Component testing for Vue.js",
   "author": "Callum Macrae <callum@macr.ae>",
   "scripts": {
