@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "repository": "callumacrae/vue-test",
+  "main": "dist/index.js",
   "dependencies": {
     "vue": "^1.0.21",
     "babel-runtime": "^6.0.0"
