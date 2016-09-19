@@ -1,6 +1,7 @@
 import { mount } from '../../src/index.js';
 import Title from '../fixtures/Title.vue';
 import Tree from '../fixtures/Tree.vue';
+import Slottable from '../fixtures/Slottable.vue';
 
 describe('mount() & ._init()', function () {
   it('should mount given component', function () {
@@ -41,5 +42,17 @@ describe('mount() & ._init()', function () {
 
     expect(mounted).to.have.property('length');
     expect(mounted).to.have.length(3);
+  });
+
+  describe('slots', function () {
+    it('should support slot test', function () {
+      const mounted = mount(Slottable, {}, 'test');
+      expect(mounted._el[0].textContent).to.equal('test');
+    });
+
+    it('should not override default text if not specified', function () {
+      const mounted = mount(Slottable);
+      expect(mounted._el[0].textContent).to.equal('Default text');
+    });
   });
 });

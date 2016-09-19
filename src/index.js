@@ -6,10 +6,11 @@ import MountedComponent from './MountedComponent';
  *
  * @param {Object} TestComponent A Vue component to mount.
  * @param {Object} [props] An optional objects containing properties to pass.
+ * * @param {string} [slot] Optional slot content as a string.
  * @returns {MountedComponent}
  */
-export function mount(TestComponent, props) {
+export function mount(TestComponent, props, slot) {
   const mounted = new MountedComponent();
-  mounted._init(TestComponent, props);
+  mounted._init(TestComponent, props, slot);
   return mounted;
 }

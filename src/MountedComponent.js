@@ -15,9 +15,10 @@ Object.defineProperty(MountedComponent.prototype, 'length', {
  *
  * @param {Object} TestComponent A Vue component to mount.
  * @param {Object} [props] An optional objects containing properties to pass.
+ * @param {string} [slot] Optional slot content as a string.
  * @private
  */
-MountedComponent.prototype._init = function initMountedComponent(TestComponent, props = {}) {
+MountedComponent.prototype._init = function initMountedComponent(TestComponent, props = {}, slot = '') {
   // If propsString makes you say wtf, please +1 the following issue:
   // https://github.com/vuejs/vue/issues/2114
   const propsString = Object.keys(props)
@@ -25,7 +26,7 @@ MountedComponent.prototype._init = function initMountedComponent(TestComponent, 
     .join(' ');
 
   this._vm = new Vue({
-    template: `<div><test-component ${propsString}></test-component></div>`,
+    template: `<div><test-component ${propsString}>${slot}</test-component></div>`,
     components: { TestComponent },
     data: props
   }).$mount();
