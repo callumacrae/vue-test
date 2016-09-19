@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import dashify from 'dashify';
 
 export default function MountedComponent() {}
 
@@ -22,7 +23,7 @@ MountedComponent.prototype._init = function initMountedComponent(TestComponent, 
   // If propsString makes you say wtf, please +1 the following issue:
   // https://github.com/vuejs/vue/issues/2114
   const propsString = Object.keys(props)
-    .map((prop) => `:${prop}="${prop}"`)
+    .map((prop) => `:${dashify(prop)}="${prop}"`)
     .join(' ');
 
   this._vm = new Vue({

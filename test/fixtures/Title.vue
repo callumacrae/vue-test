@@ -1,9 +1,9 @@
 <template>
-  <h1>{{ title || "Hello world!" }}</h1>
+  <h1>{{ title || titleKebabTest || "Hello world!" }}</h1>
 </template>
 
 <script>
   export default {
-    props: ['title']
+    props: ['title', 'titleKebabTest']
   };
 </script>

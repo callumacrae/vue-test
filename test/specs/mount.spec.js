@@ -30,6 +30,14 @@ describe('mount() & ._init()', function () {
     expect(mounted._el[0].textContent).to.equal('testing 123');
   });
 
+  it('should convert props to kebab case', function () {
+    const mounted = mount(Title, {
+      titleKebabTest: 'testing 456'
+    });
+
+    expect(mounted._el[0].textContent).to.equal('testing 456');
+  });
+
   it('should have length prop', function () {
     const mounted = mount(Title);
 
