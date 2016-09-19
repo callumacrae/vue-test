@@ -30,7 +30,7 @@ exports.find = function componentFind(selector) {
 exports.children = function componentChildren(selector) {
   let children = [];
 
-  this._el.forEach((el) => children.push(...el.children));
+  Array.from(this._el).forEach((el) => children.push(...el.children));
 
   if (selector) {
     children = children.filter((child) => child.matches(selector));
