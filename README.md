@@ -1,4 +1,4 @@
-# vue-test
+# vue-test [![Build Status](https://travis-ci.org/callumacrae/vue-test.svg?branch=master)](https://travis-ci.org/callumacrae/vue-test)
 
 > Component testing for Vue.js
 
