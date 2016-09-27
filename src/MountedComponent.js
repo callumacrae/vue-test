@@ -50,8 +50,8 @@ MountedComponent.prototype._newFromThis = function newFromThis(el) {
   return elMount;
 };
 
-Object.assign(MountedComponent.prototype, require('./fns/attributes'));
-Object.assign(MountedComponent.prototype, require('./fns/iteration'));
-Object.assign(MountedComponent.prototype, require('./fns/subsets'));
-Object.assign(MountedComponent.prototype, require('./fns/testing'));
-Object.assign(MountedComponent.prototype, require('./fns/traversal'));
+Object.assign(MountedComponent.prototype, require('./mounted-fns/attributes'));
+Object.assign(MountedComponent.prototype, require('./mounted-fns/iteration'));
+Object.assign(MountedComponent.prototype, require('./mounted-fns/subsets'));
+Object.assign(MountedComponent.prototype, require('./mounted-fns/testing'));
+Object.assign(MountedComponent.prototype, require('./mounted-fns/traversal'));
