@@ -25,3 +25,6 @@ export function mount(TestComponent, props, slot) {
 export function createMounter(TestComponent) {
   return (props, slot) => mount(TestComponent, props, slot);
 }
+
+// Passthrough
+export { default as chaiPlugin } from './chai-plugin';
