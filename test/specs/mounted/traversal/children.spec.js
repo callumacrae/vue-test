@@ -1,5 +1,5 @@
-import { mount } from '../../../src/index.js';
-import Tree from '../../fixtures/Tree.vue';
+import { mount } from '../../../../src/index.js';
+import Tree from '../../../fixtures/Tree.vue';
 
 describe('.children()', function () {
   it('should return children of single element', function () {

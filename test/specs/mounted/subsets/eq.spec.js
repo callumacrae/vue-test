@@ -1,6 +1,6 @@
-import { mount } from '../../../src/index.js';
-import Tree from '../../fixtures/Tree.vue';
-import MountedComponent from '../../../src/MountedComponent';
+import { mount } from '../../../../src/index.js';
+import Tree from '../../../fixtures/Tree.vue';
+import MountedComponent from '../../../../src/MountedComponent';
 
 describe('.eq()', function () {
   it('should return element when called with number', function () {

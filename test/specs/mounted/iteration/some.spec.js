@@ -1,6 +1,6 @@
-import { mount } from '../../../src/index.js';
-import Tree from '../../fixtures/Tree.vue';
-import MountedComponent from '../../../src/MountedComponent';
+import { mount } from '../../../../src/index.js';
+import Tree from '../../../fixtures/Tree.vue';
+import MountedComponent from '../../../../src/MountedComponent';
 
 describe('.some()', function () {
   /* eslint-disable array-callback-return */

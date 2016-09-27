@@ -1,5 +1,5 @@
-import { mount } from '../../../src/index.js';
-import Tree from '../../fixtures/Tree.vue';
+import { mount } from '../../../../src/index.js';
+import Tree from '../../../fixtures/Tree.vue';
 
 describe('.get()', function () {
   it('should return array when called with no args', function () {

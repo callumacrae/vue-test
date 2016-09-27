@@ -1,7 +1,7 @@
-import { mount } from '../../src/index.js';
-import Title from '../fixtures/Title.vue';
-import Tree from '../fixtures/Tree.vue';
-import Slottable from '../fixtures/Slottable.vue';
+import { mount } from '../../../src/index.js';
+import Title from '../../fixtures/Title.vue';
+import Tree from '../../fixtures/Tree.vue';
+import Slottable from '../../fixtures/Slottable.vue';
 
 describe('mount() & ._init()', function () {
   it('should mount given component', function () {

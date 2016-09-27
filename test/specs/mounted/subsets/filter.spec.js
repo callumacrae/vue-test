@@ -1,6 +1,6 @@
-import { mount } from '../../../src/index.js';
-import Tree from '../../fixtures/Tree.vue';
-import MountedComponent from '../../../src/MountedComponent';
+import { mount } from '../../../../src/index.js';
+import Tree from '../../../fixtures/Tree.vue';
+import MountedComponent from '../../../../src/MountedComponent';
 
 describe('.filter()', function () {
   it('should get a subset of elements', function () {
