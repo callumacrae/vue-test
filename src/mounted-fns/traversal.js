@@ -1,4 +1,4 @@
-import '../vendor/matches-polyfill';
+import matches from 'matches-selector';
 
 /**
  * Find all elements within the mounted element(s) matching a given selector.
@@ -33,7 +33,7 @@ exports.children = function componentChildren(selector) {
   Array.from(this._el).forEach((el) => children.push(...el.children));
 
   if (selector) {
-    children = children.filter((child) => child.matches(selector));
+    children = children.filter((child) => matches(child, selector));
   }
 
   if (!children.length) {

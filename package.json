@@ -14,6 +14,7 @@
   "dependencies": {
     "babel-runtime": "^6.0.0",
     "dashify": "^0.2.2",
+    "matches-selector": "^1.0.0",
     "vue": "^1.0.21"
   },
   "devDependencies": {

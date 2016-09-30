@@ -18,6 +18,8 @@
 
     <button class="disabled" disabled>Disabled button</button>
     <button class="not-disabled">Not disabled button</button>
+
+    <div class="empty"></div>
   </div>
 </template>
 

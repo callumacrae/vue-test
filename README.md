@@ -49,10 +49,10 @@ expect(mountedComponent.find('h1').text()).to.equal('Hello world!');
 
 ### Testing
 
-- [ ] `.contains(selector)`
+- [x] `.contains(selector)`
 - [x] `.hasClass(className)`
-- [ ] `.matches(selector)`
-- [ ] `.isEmpty()`
+- [x] `.matches(selector)`
+- [x] `.isEmpty()`
 
 ### Events
 
@@ -64,8 +64,9 @@ expect(mountedComponent.find('h1').text()).to.equal('Hello world!');
 - [x] `expect(mountedComponent).to.be.ok`
 - [x] `expect(mountedComponent).to.be.tag('p')`
 - [x] `expect(mountedComponent).to.contain.tag('p')`
-- [ ] `expect(mountedComponent).to.match('#id .class')`
-- [ ] `expect(mountedComponent).to.contain('#id .class')`
+- [x] `expect(mountedComponent).to.match.selector('#id .class')`
+- [x] `expect(mountedComponent).to.contain.selector('#id .class')`
+- [x] `expect(mountedComponent).to.be.empty`
 - [x] `expect(mountedComponent).to.have.className('alert')`
 - [ ] `expect(mountedComponent).to.not.be.fragment`
 - [ ] `expect(mountedComponent).to.have.value('input value')`
