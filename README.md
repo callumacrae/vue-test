@@ -70,7 +70,7 @@ expect(mountedComponent.find('h1').text()).to.equal('Hello world!');
 - [x] `expect(mountedComponent).to.be.empty`
 - [x] `expect(mountedComponent).to.have.className('alert')`
 - [x] `expect(mountedComponent).to.not.be.fragment`
-- [ ] `expect(mountedComponent).to.have.value('input value')`
+- [x] `expect(mountedComponent).to.have.value('input value')`
 - [x] `expect(mountedComponent).to.have.text('some text')`
 - [x] `expect(mountedComponent).to.contain.text('some text')`
 - [ ] `expect(mountedComponent).to.have.attribute('style')`
