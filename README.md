@@ -57,8 +57,7 @@ expect(mountedComponent.find('h1').text()).to.equal('Hello world!');
 
 ### Events
 
-- [ ] `.trigger(event)`
-- [ ] `.fired(event)` ?
+- [x] `.trigger(event)`
 
 ## Test helpers
 

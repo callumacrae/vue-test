@@ -51,6 +51,7 @@ MountedComponent.prototype._newFromThis = function newFromThis(el) {
 };
 
 Object.assign(MountedComponent.prototype, require('./mounted-fns/attributes'));
+Object.assign(MountedComponent.prototype, require('./mounted-fns/events'));
 Object.assign(MountedComponent.prototype, require('./mounted-fns/iteration'));
 Object.assign(MountedComponent.prototype, require('./mounted-fns/subsets'));
 Object.assign(MountedComponent.prototype, require('./mounted-fns/testing'));
