@@ -1,9 +1,9 @@
 import MountedComponent from '../MountedComponent';
 
-export function tag(chai, utils) {
+export default function tag(chai, utils) {
   const Assertion = chai.Assertion;
 
-  return function (tagName) {
+  Assertion.addMethod('tag', function (tagName) {
     const obj = this._obj;
 
     new Assertion(obj).to.be.instanceof(MountedComponent);
@@ -26,5 +26,5 @@ export function tag(chai, utils) {
         obj.get(0).tagName
       );
     }
-  };
+  });
 }

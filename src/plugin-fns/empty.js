@@ -1,7 +1,9 @@
 import MountedComponent from '../MountedComponent';
 
-export function empty() {
-  return function (_super) {
+export default function empty(chai) {
+  const Assertion = chai.Assertion;
+
+  Assertion.overwriteProperty('empty', function (_super) {
     return function () {
       const obj = this._obj;
 
@@ -15,5 +17,5 @@ export function empty() {
         _super.call(this);
       }
     };
-  };
+  });
 }

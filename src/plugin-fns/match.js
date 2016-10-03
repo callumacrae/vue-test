@@ -1,9 +1,9 @@
 import MountedComponent from '../MountedComponent';
 
-export function assert(chai) {
+export default function match(chai, utils) {
   const Assertion = chai.Assertion;
 
-  return function (selector) {
+  Assertion.addChainableMethod('match', function (selector) {
     const obj = this._obj;
 
     new Assertion(obj).to.be.instanceof(MountedComponent);
@@ -15,11 +15,7 @@ export function assert(chai) {
       'expected Vue component to not match selector #{exp}',
       selector
     );
-  };
-}
-
-export function chain(chai, utils) {
-  return function () {
+  }, function () {
     utils.flag(this, 'vue.match', true);
-  };
+  });
 }

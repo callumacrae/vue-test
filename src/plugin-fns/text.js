@@ -1,9 +1,9 @@
 import MountedComponent from '../MountedComponent';
 
-export function text(chai, utils) {
+export default function text(chai, utils) {
   const Assertion = chai.Assertion;
 
-  return function (text) {
+  Assertion.addMethod('text', function (text) {
     const obj = this._obj;
 
     new Assertion(obj).to.be.instanceof(MountedComponent);
@@ -26,5 +26,5 @@ export function text(chai, utils) {
         obj.text()
       );
     }
-  };
+  });
 }

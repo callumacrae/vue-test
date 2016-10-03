@@ -1,9 +1,9 @@
 import MountedComponent from '../MountedComponent';
 
-export function className(chai, utils) {
+export default function className(chai, utils) {
   const Assertion = chai.Assertion;
 
-  return function (className) {
+  Assertion.addMethod('className', function (className) {
     const obj = this._obj;
 
     new Assertion(className).to.not.contain(' ', 'invalid classname');
@@ -27,5 +27,5 @@ export function className(chai, utils) {
         obj.attr('class')
       );
     }
-  };
+  });
 }

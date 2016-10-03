@@ -1,9 +1,9 @@
 import MountedComponent from '../MountedComponent';
 
-export function selector(chai, utils) {
+export default function selector(chai, utils) {
   const Assertion = chai.Assertion;
 
-  return function (selector) {
+  Assertion.addMethod('selector', function (selector) {
     const obj = this._obj;
 
     new Assertion(obj).to.be.instanceof(MountedComponent);
@@ -25,5 +25,5 @@ export function selector(chai, utils) {
     }
 
     throw new Error('you need to specify either contains or matches');
-  };
+  });
 }

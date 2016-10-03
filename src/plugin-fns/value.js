@@ -1,9 +1,9 @@
 import MountedComponent from '../MountedComponent';
 
-export function value(chai, utils) {
+export default function value(chai, utils) {
   const Assertion = chai.Assertion;
 
-  return function (value) {
+  Assertion.addMethod('value', function (value) {
     const obj = this._obj;
 
     new Assertion(obj).to.be.instanceof(MountedComponent);
@@ -15,5 +15,5 @@ export function value(chai, utils) {
       value,
       obj.value()
     );
-  };
+  });
 }
