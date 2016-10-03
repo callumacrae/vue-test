@@ -10,4 +10,5 @@ export default function chaiPlugin(chai, utils) {
   Assertion.overwriteProperty('empty', require('./plugin-fns/empty').empty(chai, utils));
   Assertion.addMethod('selector', require('./plugin-fns/selector').selector(chai, utils));
   Assertion.addProperty('fragment', require('./plugin-fns/fragment').fragment(chai, utils));
+  Assertion.addMethod('text', require('./plugin-fns/text').text(chai, utils));
 }
