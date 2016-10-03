@@ -8,6 +8,7 @@ export default function chaiPlugin(chai) {
 }
 
 export const plugins = {
+  attribute: require('./plugin-fns/attribute').default,
   className: require('./plugin-fns/className').default,
   empty: require('./plugin-fns/empty').default,
   fragment: require('./plugin-fns/fragment').default,
