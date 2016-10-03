@@ -53,6 +53,7 @@ expect(mountedComponent.find('h1').text()).to.equal('Hello world!');
 - [x] `.hasClass(className)`
 - [x] `.matches(selector)`
 - [x] `.isEmpty()`
+- [x] `.isFragment()`
 
 ### Events
 
@@ -68,7 +69,7 @@ expect(mountedComponent.find('h1').text()).to.equal('Hello world!');
 - [x] `expect(mountedComponent).to.contain.selector('#id .class')`
 - [x] `expect(mountedComponent).to.be.empty`
 - [x] `expect(mountedComponent).to.have.className('alert')`
-- [ ] `expect(mountedComponent).to.not.be.fragment`
+- [x] `expect(mountedComponent).to.not.be.fragment`
 - [ ] `expect(mountedComponent).to.have.value('input value')`
 - [ ] `expect(mountedComponent).to.contain.text('some text')`
 - [ ] `expect(mountedComponent).to.have.attribute('style')`

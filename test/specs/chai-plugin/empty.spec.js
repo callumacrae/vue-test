@@ -4,7 +4,7 @@ import Tree from '../../fixtures/Tree.vue';
 chai.use(chaiPlugin);
 
 describe('Chai plugin', function () {
-  describe('.to.be.empty()', function () {
+  describe('.to.be.empty', function () {
     it('should not throw when element empty', function () {
       const mounted = mount(Tree);
       const child = mounted.find('.empty');

@@ -1,7 +1,7 @@
 import { mount } from '../../../../src/index.js';
 import Tree from '../../../fixtures/Tree.vue';
 
-describe('.matches()', function () {
+describe('.isEmpty()', function () {
   it('should return true when element empty', function () {
     const mounted = mount(Tree);
     const child = mounted.find('.empty');

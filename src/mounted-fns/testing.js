@@ -38,3 +38,18 @@ exports.contains = function componentMatches(selector) {
 exports.isEmpty = function componentEmpty() {
   return !Array.from(this._el).some((el) => el.childNodes.length);
 };
+
+/**
+ * Tests whether a vue component is a fragment component.
+ *
+ * @returns {boolean} True if component is fragment.
+ */
+exports.isFragment = function componentFragment() {
+  const children = this._vm.$el.children;
+
+  if (this._el !== children) {
+    throw new Error('isFragment() can only be called on root components');
+  }
+
+  return children.length > 1;
+};
