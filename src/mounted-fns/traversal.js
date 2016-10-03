@@ -42,3 +42,27 @@ exports.children = function componentChildren(selector) {
 
   return this._newFromThis(children);
 };
+
+/**
+ * Returns the parent of a mounted element. Will search upwards until it finds
+ * a parent matching the given selector.
+ *
+ * @returns {*}
+ */
+exports.parent = function componentParent(selector) {
+  let parent = this._el[0].parentElement;
+
+  if (!selector) {
+    return this._newFromThis(parent);
+  }
+
+  while (parent && !matches(parent, selector)) {
+    parent = parent.parentElement;
+  }
+
+  if (!parent) {
+    return null;
+  }
+
+  return this._newFromThis(parent);
+};

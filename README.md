@@ -23,7 +23,7 @@ expect(mountedComponent.find('h1').text()).to.equal('Hello world!');
 
 - [x] `.find()`
 - [x] `.children()`
-- [ ] `.parent()`
+- [x] `.parent()`
 
 ### Attributes
 
