@@ -25,7 +25,7 @@ exports.find = function componentFind(selector) {
  * selector.
  *
  * @param {string} [selector] The selector to filter by.
- * @returns {*}
+ * @returns {MountedComponent} A new MountedComponent.
  */
 exports.children = function componentChildren(selector) {
   let children = [];
@@ -47,7 +47,7 @@ exports.children = function componentChildren(selector) {
  * Returns the parent of a mounted element. Will search upwards until it finds
  * a parent matching the given selector.
  *
- * @returns {*}
+ * @returns {MountedComponent} A new MountedComponent.
  */
 exports.parent = function componentParent(selector) {
   let parent = this._el[0].parentElement;

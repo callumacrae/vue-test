@@ -1,76 +1,79 @@
 # vue-test [![Build Status](https://travis-ci.org/callumacrae/vue-test.svg?branch=master)](https://travis-ci.org/callumacrae/vue-test)
 
-> Component testing for Vue.js
+> Component testing utilities for Vue.js
 
-**WIP**
+## Installation
 
-## Mounting a component for testing
+```
+$ npm install --save-dev vue-test
+```
+
+## Usage
+
+The library is divided into two parts: the `mount()` function and the chai
+assertion library plugin. The `mount()` function is used for mounting components
+in your tests without having to directly interact with the DOM, and the chai
+plugin can be used to write readable tests with understandable output for
+mounted Vue components.
+
+### The `mount()` function
+
+The `mount()` function takes two arguments, a Vue component, and some optional
+properties, and returns a wrapped mounted component with some useful utility
+functions.
 
 ```js
 import { mount } from 'vue-test';
-import YourComponent from './YourComponent.vue';
+import Title from './Title.vue';
 
-const mountedComponent = mount(YourComponent, {
-  prop: 'Object of props'
+const mountedTitle = mount(Title, {
+  title: 'Hello world!'
 });
 
-expect(mountedComponent.find('h1').text()).to.equal('Hello world!');
+mountedTitle.find('h1').text(); // Hello world!
 ```
 
-## Methods
+Check out [mount-api.md](docs/mount-api.md) for a full list of the available
+functions.
 
-### Traversal
 
-- [x] `.find()`
-- [x] `.children()`
-- [x] `.parent()`
+### Chai plugin
 
-### Attributes
+vue-test includes a chai plugin which you can use to test a component mounted
+with the `mount()` function.
 
-- [x] `.html()`
-- [x] `.text()`
-- [x] `.value()`
-- [x] `.data()`
-- [x] `.attr()`
-- [x] `.prop()`
+Here's how you add it:
 
-### Iteration
+```js
+import { chaiPlugin } from 'vue-test';
+chai.use(chaiPlugin);
+```
 
-- [x] `.each()`
-- [x] `.map()`
-- [x] `.some()`
-- [x] `.every()`
+Here's a very quick overview of what you can do:
 
-### Subsets
+- `expect(mountedComponent).to.be.ok`
+- `expect(mountedComponent).to.be.tag('p')`
+- `expect(mountedComponent).to.contain.tag('p')`
+- `expect(mountedComponent).to.match.selector('#id .class')`
+- `expect(mountedComponent).to.contain.selector('#id .class')`
+- `expect(mountedComponent).to.be.empty`
+- `expect(mountedComponent).to.have.className('alert')`
+- `expect(mountedComponent).to.not.be.fragment`
+- `expect(mountedComponent).to.have.value('input value')`
+- `expect(mountedComponent).to.have.text('some text')`
+- `expect(mountedComponent).to.contain.text('some text')`
+- `expect(mountedComponent).to.have.attribute('style')`
+- `expect(mountedComponent).to.have.attribute('style').that.equals('something')`
 
-- [x] `.get()`
-- [x] `.eq()`
-- [x] `.filter()`
+It's all pretty descriptive and understandable, but for full explanations, see
+[chai-plugin-api.md](docs/chai-plugin-api.md);
 
-### Testing
+### Contributing
 
-- [x] `.contains(selector)`
-- [x] `.hasClass(className)`
-- [x] `.matches(selector)`
-- [x] `.isEmpty()`
-- [x] `.isFragment()`
+If you feel something is missing or find a bug, feel free to send a PR or open
+an issue. If you haven't contributed to a project on GitHub before, feel free to
+ask me for help and I can help you out :smile:
 
-### Events
+### License
 
-- [x] `.trigger(event)`
-
-## Test helpers
-
-- [x] `expect(mountedComponent).to.be.ok`
-- [x] `expect(mountedComponent).to.be.tag('p')`
-- [x] `expect(mountedComponent).to.contain.tag('p')`
-- [x] `expect(mountedComponent).to.match.selector('#id .class')`
-- [x] `expect(mountedComponent).to.contain.selector('#id .class')`
-- [x] `expect(mountedComponent).to.be.empty`
-- [x] `expect(mountedComponent).to.have.className('alert')`
-- [x] `expect(mountedComponent).to.not.be.fragment`
-- [x] `expect(mountedComponent).to.have.value('input value')`
-- [x] `expect(mountedComponent).to.have.text('some text')`
-- [x] `expect(mountedComponent).to.contain.text('some text')`
-- [x] `expect(mountedComponent).to.have.attribute('style')`
-- [x] `expect(mountedComponent).to.have.attribute('style').that.equals('something')`
+This project is released under the MIT license.
