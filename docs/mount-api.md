@@ -1,5 +1,13 @@
 # The `mount()` function - API documentation
 
+- [The `mount()` function](#the-mount-function)
+- [Traversal utility functions](#traversal-utility-functions) (`.find()`, `.children()`, `.parent()`)
+- [Attribute utility functions](#attribute-utility-functions) (`.html()`, `.text()`, `.value()`, `.data()`, `.attr()`, `.prop()`)
+- [Iteration utility functions](#iteration-utility-functions) (`.each()`, `.map()`, `.some()`, `.every()`)
+- [Subset utility functions](#subset-utility-functions) (`.get()`, `.eq()`, `.filter()`)
+- [Testing utility functions](#testing-utility-functions) (`.contains()`, `.hasClass()`, `.matches()`, `.isEmpty()`, `.isFragment()`)
+- [Event utility functions](#event-utility-functions) (`.trigger()`)
+
 ## The `mount()` function
 
 The `mount()` function takes two arguments, a Vue component, and some optional

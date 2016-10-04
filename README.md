@@ -66,7 +66,7 @@ Here's a very quick overview of what you can do:
 - `expect(mountedComponent).to.have.attribute('style').that.equals('something')`
 
 It's all pretty descriptive and understandable, but for full explanations, see
-[chai-plugin-api.md](docs/chai-plugin-api.md);
+[chai-plugin-api.md](docs/chai-plugin-api.md).
 
 ### Contributing
 
