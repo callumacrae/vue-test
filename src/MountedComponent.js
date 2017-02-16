@@ -27,7 +27,7 @@ Object.defineProperty(MountedComponent.prototype, 'length', {
  * @private
  */
 MountedComponent.prototype._init = function initMountedComponent(TestComponent, props = {}, slot = '') {
-  // If propsString makes you say wtf, please +1 the following issue:
+  // Necessary hack to support Vue 1.x: for 2.x, we could just use v-bind
   // https://github.com/vuejs/vue/issues/2114
   const propsString = Object.keys(props)
     .map((prop) => `:${dashify(prop)}="${prop}"`)
