@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue from 'vue/dist/vue.js'; // Use runtime-only build of Vue
 import dashify from 'dashify';
 
 import * as attributeFns from './mounted-fns/attributes';
@@ -38,8 +38,6 @@ MountedComponent.prototype._init = function initMountedComponent(TestComponent, 
     components: { TestComponent },
     data: props
   }).$mount();
-
-  console.log(this._vm.$el);
 
   this._el = this._vm.$el.children;
 };

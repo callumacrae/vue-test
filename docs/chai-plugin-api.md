@@ -95,14 +95,6 @@ Tests whether a component has a given class name.
 expect(mountedComponent).to.have.className('component--red');
 ```
 
-## `.to.be.fragment`
-
-Tests whether a component is a fragment instance.
-
-```js
-expect(mountedComponent).to.be.fragment;
-```
-
 ## `.to.have.value(className)`
 
 Tests whether a component has a given value (useful for input elements).

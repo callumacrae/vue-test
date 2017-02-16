@@ -1,7 +1,6 @@
 import attribute from './plugin-fns/attribute';
 import className from './plugin-fns/className';
 import empty from './plugin-fns/empty';
-import fragment from './plugin-fns/fragment';
 import match from './plugin-fns/match';
 import selector from './plugin-fns/selector';
 import tag from './plugin-fns/tag';
@@ -18,5 +17,5 @@ export default function chaiPlugin(chai) {
 }
 
 export const plugins = {
-  attribute, className, empty, fragment, match, selector, tag, text, value
+  attribute, className, empty, match, selector, tag, text, value
 };
