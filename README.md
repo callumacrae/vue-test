@@ -1,6 +1,6 @@
 # vue-test [![Build Status](https://travis-ci.org/callumacrae/vue-test.svg?branch=master)](https://travis-ci.org/callumacrae/vue-test)
 
-> Component testing utilities for Vue.js (both 1 and 2.0)
+> Component testing utilities for Vue.js (work with both Vue 1 and 2)
 
 ## Installation
 
