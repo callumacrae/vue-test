@@ -1,5 +1,12 @@
-import Vue from 'vue';
+import Vue from 'vue/dist/vue.js'; // Use runtime-only build of Vue
 import dashify from 'dashify';
+
+import * as attributeFns from './mounted-fns/attributes';
+import * as eventFns from './mounted-fns/events';
+import * as iterationFns from './mounted-fns/iteration';
+import * as subsetFns from './mounted-fns/subsets';
+import * as testFns from './mounted-fns/testing';
+import * as traversalFns from './mounted-fns/traversal';
 
 export default function MountedComponent() {}
 
@@ -50,9 +57,9 @@ MountedComponent.prototype._newFromThis = function newFromThis(el) {
   return elMount;
 };
 
-Object.assign(MountedComponent.prototype, require('./mounted-fns/attributes'));
-Object.assign(MountedComponent.prototype, require('./mounted-fns/events'));
-Object.assign(MountedComponent.prototype, require('./mounted-fns/iteration'));
-Object.assign(MountedComponent.prototype, require('./mounted-fns/subsets'));
-Object.assign(MountedComponent.prototype, require('./mounted-fns/testing'));
-Object.assign(MountedComponent.prototype, require('./mounted-fns/traversal'));
+Object.assign(MountedComponent.prototype, attributeFns);
+Object.assign(MountedComponent.prototype, eventFns);
+Object.assign(MountedComponent.prototype, iterationFns);
+Object.assign(MountedComponent.prototype, subsetFns);
+Object.assign(MountedComponent.prototype, testFns);
+Object.assign(MountedComponent.prototype, traversalFns);

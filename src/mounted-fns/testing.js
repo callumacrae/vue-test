@@ -1,4 +1,4 @@
-import matches from 'matches-selector';
+import matchesSelector from 'matches-selector';
 
 /**
  * Test whether an element has a given class or not.
@@ -6,9 +6,9 @@ import matches from 'matches-selector';
  * @param {string} className The name of the class to test for.
  * @returns {boolean} True if the element has the class.
  */
-exports.hasClass = function componentHasClass(className) {
+export function hasClass(className) {
   return Array.from(this._el).some((el) => el.classList.contains(className));
-};
+}
 
 /**
  * Test whether an element matches a given selector or not.
@@ -16,9 +16,9 @@ exports.hasClass = function componentHasClass(className) {
  * @param {string} selector Selector to use.
  * @returns {boolean} True if an element matches the selector.
  */
-exports.matches = function componentMatches(selector) {
-  return Array.from(this._el).some((el) => matches(el, selector));
-};
+export function matches(selector) {
+  return Array.from(this._el).some((el) => matchesSelector(el, selector));
+}
 
 /**
  * Test whether an element contains a given selector or not.
@@ -26,30 +26,15 @@ exports.matches = function componentMatches(selector) {
  * @param {string} selector Selector to use.
  * @returns {boolean} True if an element matches the selector.
  */
-exports.contains = function componentMatches(selector) {
+export function contains(selector) {
   return Array.from(this._el).some((el) => el.querySelectorAll(selector).length);
-};
+}
 
 /**
  * Tests whether an element has no child nodes (including text and whitespace)
  *
  * @returns {boolean} True if element is empty.
  */
-exports.isEmpty = function componentEmpty() {
+export function isEmpty() {
   return !Array.from(this._el).some((el) => el.childNodes.length);
-};
-
-/**
- * Tests whether a vue component is a fragment component.
- *
- * @returns {boolean} True if component is fragment.
- */
-exports.isFragment = function componentFragment() {
-  const children = this._vm.$el.children;
-
-  if (this._el !== children) {
-    throw new Error('isFragment() can only be called on root components');
-  }
-
-  return children.length > 1;
-};
+}

@@ -4,14 +4,14 @@
  * @param {function} cb A predicate function.
  * @returns {MountedComponent} self.
  */
-exports.each = function componentEach(cb) {
+export function each(cb) {
   Array.from(this._el).forEach((el, i) => {
     const elMount = this._newFromThis(el);
     cb.call(elMount, i, elMount);
   });
 
   return this;
-};
+}
 
 /**
  * Equivalent to array.map().
@@ -19,12 +19,12 @@ exports.each = function componentEach(cb) {
  * @param {function} cb A predicate function.
  * @returns {Array} Array of values returned by predicate function.
  */
-exports.map = function componentMap(cb) {
+export function map(cb) {
   return Array.from(this._el).map((el, i) => {
     const elMount = this._newFromThis(el);
     return cb.call(elMount, i, elMount);
   });
-};
+}
 
 /**
  * Equivalent to array.some().
@@ -32,12 +32,12 @@ exports.map = function componentMap(cb) {
  * @param {function} cb A predicate function.
  * @returns {boolean} True if predicate function returns true at least once.
  */
-exports.some = function componentSome(cb) {
+export function some(cb) {
   return Array.from(this._el).some((el, i) => {
     const elMount = this._newFromThis(el);
     return cb.call(elMount, i, elMount);
   });
-};
+}
 
 /**
  * Equivalent to array.every().
@@ -45,9 +45,9 @@ exports.some = function componentSome(cb) {
  * @param {function} cb A predicate function.
  * @returns {boolean} True if predicate function returns true every time.
  */
-exports.every = function componentEvery(cb) {
+export function every(cb) {
   return Array.from(this._el).every((el, i) => {
     const elMount = this._newFromThis(el);
     return cb.call(elMount, i, elMount);
   });
-};
+}

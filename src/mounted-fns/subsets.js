@@ -4,13 +4,13 @@
  * @param {number} [n] Index of element to get.
  * @returns {Array|HTMLElement|null} Array of elements or element.
  */
-exports.get = function getElement(n) {
+export function get(n) {
   if (typeof n === 'undefined') {
     return Array.from(this._el);
   }
 
   return this._el[n] || null;
-};
+}
 
 /**
  * Get an element as a MountedComponent.
@@ -18,13 +18,13 @@ exports.get = function getElement(n) {
  * @param {number} n Index of element to get.
  * @returns {MountedComponent|null} New MountedComponent.
  */
-exports.eq = function getElementAsMountedComponent(n) {
+export function eq(n) {
   if (!this._el[n]) {
     return null;
   }
 
   return this._newFromThis(this._el[n]);
-};
+}
 
 /**
  * Filter elements using a predicate function.
@@ -32,7 +32,7 @@ exports.eq = function getElementAsMountedComponent(n) {
  * @param {function} cb Predicate function: return truthy to keep element.
  * @returns {MountedComponent} Subset MountedComponent. Can be empty.
  */
-exports.filter = function filterElements(cb) {
+export function filter(cb) {
   const subset = Array.from(this._el).filter((el, i) => {
     const elMount = this._newFromThis(el);
 
@@ -40,4 +40,4 @@ exports.filter = function filterElements(cb) {
   });
 
   return this._newFromThis(subset);
-};
+}

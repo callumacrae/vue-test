@@ -230,15 +230,6 @@ Returns true if a component has no children.
 const isEmpty = mountedComponent.isEmpty();
 ```
 
-#### `.isFragment()`
-
-Returns true if a component is a fragment instance. Can only be called on the
-instance itself: won't work on a new mounted component created using `.find()`.
-
-```js
-const isFragment = mountedComponent.isFragment();
-```
-
 ### Event utility functions
 
 There is only one event utility function, `.trigger()`.

@@ -1,6 +1,6 @@
 # vue-test [![Build Status](https://travis-ci.org/callumacrae/vue-test.svg?branch=master)](https://travis-ci.org/callumacrae/vue-test)
 
-> Component testing utilities for Vue.js
+> Component testing utilities for Vue.js (work with both Vue 1 and 2)
 
 ## Installation
 
@@ -58,7 +58,6 @@ Here's a very quick overview of what you can do:
 - `expect(mountedComponent).to.contain.selector('#id .class')`
 - `expect(mountedComponent).to.be.empty`
 - `expect(mountedComponent).to.have.className('alert')`
-- `expect(mountedComponent).to.not.be.fragment`
 - `expect(mountedComponent).to.have.value('input value')`
 - `expect(mountedComponent).to.have.text('some text')`
 - `expect(mountedComponent).to.contain.text('some text')`
