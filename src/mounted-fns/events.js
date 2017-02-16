@@ -3,7 +3,7 @@
  *
  * @param {string|Event} event Name of event to fire, or event object.
  */
-exports.trigger = function triggerEvent(event) {
+export function trigger(event) {
   Array.from(this._el).forEach((el) => {
     if (!(event instanceof Event)) {
       event = new Event(event);
@@ -11,4 +11,4 @@ exports.trigger = function triggerEvent(event) {
 
     el.dispatchEvent(event);
   });
-};
+}
