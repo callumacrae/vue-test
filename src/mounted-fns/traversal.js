@@ -6,7 +6,7 @@ import matches from 'matches-selector';
  * @param {string} selector The selector to use.
  * @returns {MountedComponent} A new MountedComponent.
  */
-exports.find = function componentFind(selector) {
+export function find(selector) {
   const found = [];
 
   Array.from(this._el).forEach((el) => {
@@ -27,7 +27,7 @@ exports.find = function componentFind(selector) {
  * @param {string} [selector] The selector to filter by.
  * @returns {MountedComponent} A new MountedComponent.
  */
-exports.children = function componentChildren(selector) {
+export function children(selector) {
   let children = [];
 
   Array.from(this._el).forEach((el) => children.push(...el.children));
@@ -49,7 +49,7 @@ exports.children = function componentChildren(selector) {
  *
  * @returns {MountedComponent} A new MountedComponent.
  */
-exports.parent = function componentParent(selector) {
+export function parent(selector) {
   let parent = this._el[0].parentElement;
 
   if (!selector) {
