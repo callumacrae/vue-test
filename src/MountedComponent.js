@@ -1,4 +1,6 @@
-import Vue from 'vue/dist/vue.js'; // Use runtime-only build of Vue
+// NOTE: vue-test requires the **Full** version of Vue (which includes the compiler).
+// Make sure your build configuration for testing aliases vue properly.
+import Vue from 'vue';
 import dashify from 'dashify';
 
 import * as attributeFns from './mounted-fns/attributes';
