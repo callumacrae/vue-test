@@ -3,6 +3,11 @@ var webpack = require('webpack');
 var projectRoot = path.resolve(__dirname, '../');
 
 var webpackConfig = {
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.common.js'
+    }
+  },
   module: {
     preLoaders: [
       {

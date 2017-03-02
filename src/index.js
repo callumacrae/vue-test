@@ -1,4 +1,5 @@
 import MountedComponent from './MountedComponent';
+import Vue from 'vue';
 
 /**
  * Mount a given component with optional props, returning a MountedComponent
@@ -28,3 +29,6 @@ export function createMounter(TestComponent) {
 
 // Passthrough
 export { default as chaiPlugin } from './chai-plugin';
+
+// Shutoff the message from Vue about not being in production mode.
+Vue.config.productionTip = false;
