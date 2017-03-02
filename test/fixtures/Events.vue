@@ -13,6 +13,8 @@
     methods: {
       clicked(e) {
         e.target.className = 'clicked';
+
+        this.$emit('anEvent', 'this is a sample event');
       }
     }
   };

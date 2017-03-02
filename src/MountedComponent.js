@@ -28,7 +28,7 @@ Object.defineProperty(MountedComponent.prototype, 'length', {
  * @param {string} [slot] Optional slot content as a string.
  * @private
  */
-MountedComponent.prototype._init = function initMountedComponent(TestComponent, props = {}, slot = '') {
+MountedComponent.prototype._init = function initMountedComponent(TestComponent, props = {}, slot = '', eventBindings = {}) {
   // Necessary hack to support Vue 1.x: for 2.x, we could just use v-bind
   // https://github.com/vuejs/vue/issues/2114
   const propsString = Object.keys(props)
@@ -40,6 +40,10 @@ MountedComponent.prototype._init = function initMountedComponent(TestComponent, 
     components: { TestComponent },
     data: props
   }).$mount();
+
+  Object.keys(eventBindings).forEach(function(event) {
+    this._vm.$children[0].$on(event, eventBindings[event]);
+  }, this);
 
   this._el = this._vm.$el.children;
 };
