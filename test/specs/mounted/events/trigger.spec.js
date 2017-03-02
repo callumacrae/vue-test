@@ -25,3 +25,16 @@ describe('.trigger()', function () {
     expect(links._el[4].className).to.equal('clicked');
   });
 });
+
+describe('Emitted events', function () {
+  it('should be testable', function () {
+    var spy = sinon.spy();
+
+    const mounted = mount(Events, {}, '', { anEvent: spy });
+
+    const link = mounted.find('a:first-child');
+
+    link.trigger('click');
+    expect(spy).to.have.been.calledOnce;
+  });
+});

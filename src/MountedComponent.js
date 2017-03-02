@@ -39,13 +39,11 @@ MountedComponent.prototype._init = function initMountedComponent(TestComponent, 
     template: `<div><test-component ${propsString}>${slot}</test-component></div>`,
     components: { TestComponent },
     data: props
-  });
+  }).$mount();
 
   Object.keys(eventBindings).forEach(function(event) {
-    this._vm.$on(event, eventBindings[event]);
+    this._vm.$children[0].$on(event, eventBindings[event]);
   }, this);
-
-  this._vm.$mount();
 
   this._el = this._vm.$el.children;
 };
