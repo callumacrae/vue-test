@@ -48,6 +48,36 @@ MountedComponent.prototype._init = function initMountedComponent(TestComponent, 
   this._el = this._vm.$el.children;
 };
 
+MountedComponent.prototype._init2 = function initMountedComponent2(TestComponent, options) {
+  var props = options && options.props || {};
+  var slots = options && options.slots || {};
+  var events = options && options.events || {};
+
+  var scopedSlots = {};
+
+  var Tester = Vue.extend({
+    functional: true,
+    render: function(createElement, context) {
+      return createElement(TestComponent, {
+        scopedSlots: scopedSlots,
+        props: props,
+        on: events
+      });
+
+    }
+  });
+
+  this._vm = new Tester();
+
+  Object.keys(slots).forEach(function(slot) {
+    scopedSlots[slot] = Vue.compile(slots[slot]).render.bind(this._vm);
+  }, this);
+
+  this._vm.$mount();
+
+  this._el = [this._vm.$el];
+};
+
 /**
  * Generate a new MountedComponent in the same VM, but with different elements.
  *

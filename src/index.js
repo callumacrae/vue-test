@@ -16,6 +16,12 @@ export function mount(TestComponent, props, slot, events) {
   return mounted;
 }
 
+export function mount2(TestComponent, options) {
+  var mounted = new MountedComponent();
+  mounted._init2(TestComponent, options);
+  return mounted;
+}
+
 /**
  * Returns a function that creates new mounted instances of a components.
  *
