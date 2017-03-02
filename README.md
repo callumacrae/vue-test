@@ -16,6 +16,18 @@ in your tests without having to directly interact with the DOM, and the chai
 plugin can be used to write readable tests with understandable output for
 mounted Vue components.
 
+> NOTE: vue-test requires the **full** version of Vue (which includes the compiler).  Make sure your build configuration for testing aliases `vue` properly.  For example (webpack 2):
+
+```javascript
+{
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
+  }
+}
+```
+
 ### The `mount()` function
 
 The `mount()` function takes two arguments, a Vue component, and some optional
