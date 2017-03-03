@@ -28,7 +28,7 @@ Object.defineProperty(MountedComponent.prototype, 'length', {
  * @param {string} [slot] Optional slot content as a string.
  * @private
  */
-MountedComponent.prototype._init = function initMountedComponent(TestComponent, props = {}, slot = '') {
+MountedComponent.prototype._init = function initMountedComponent(TestComponent, props = {}, slot = '', eventBindings = {}) {
   // Necessary hack to support Vue 1.x: for 2.x, we could just use v-bind
   // https://github.com/vuejs/vue/issues/2114
   const propsString = Object.keys(props)
@@ -41,7 +41,41 @@ MountedComponent.prototype._init = function initMountedComponent(TestComponent, 
     data: props
   }).$mount();
 
+  Object.keys(eventBindings).forEach(function(event) {
+    this._vm.$children[0].$on(event, eventBindings[event]);
+  }, this);
+
   this._el = this._vm.$el.children;
+};
+
+MountedComponent.prototype._init2 = function initMountedComponent2(TestComponent, options) {
+  var props = options && options.props || {};
+  var slots = options && options.slots || {};
+  var events = options && options.events || {};
+
+  var scopedSlots = {};
+
+  var Tester = Vue.extend({
+    functional: true,
+    render: function(createElement, context) {
+      return createElement(TestComponent, {
+        scopedSlots: scopedSlots,
+        props: props,
+        on: events
+      });
+
+    }
+  });
+
+  this._vm = new Tester();
+
+  Object.keys(slots).forEach(function(slot) {
+    scopedSlots[slot] = Vue.compile(slots[slot]).render.bind(this._vm);
+  }, this);
+
+  this._vm.$mount();
+
+  this._el = [this._vm.$el];
 };
 
 /**

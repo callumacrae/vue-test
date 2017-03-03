@@ -10,9 +10,15 @@ import Vue from 'vue';
  * @param {string} [slot] Optional slot content as a string.
  * @returns {MountedComponent}
  */
-export function mount(TestComponent, props, slot) {
+export function mount(TestComponent, props, slot, events) {
   const mounted = new MountedComponent();
-  mounted._init(TestComponent, props, slot);
+  mounted._init(TestComponent, props, slot, events);
+  return mounted;
+}
+
+export function mount2(TestComponent, options) {
+  var mounted = new MountedComponent();
+  mounted._init2(TestComponent, options);
   return mounted;
 }
 
